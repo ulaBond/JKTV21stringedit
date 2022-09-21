@@ -16,6 +16,7 @@ public class JKTV21stringedit {
      */
     public static void main(String[] args) {
         System.out.println("Строки в Java");
+        System.out.println("-----------Строки в Java 2----------");
     }
     
 }
