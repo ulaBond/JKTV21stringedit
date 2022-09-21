@@ -22,6 +22,8 @@ public class JKTV21stringedit {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
         System.out.println("Kol simvolov " +str.length());
+        String[] words = str.split(" ");
+        System.out.println("Kol slov " + words.length);
     }
     
 }
