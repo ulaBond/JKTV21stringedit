@@ -12,7 +12,6 @@ import java.util.Scanner;
  * @author pupil
  */
 public class JKTV21stringedit {
-
     /**
      * @param args the command line arguments
      */
@@ -21,9 +20,31 @@ public class JKTV21stringedit {
         System.out.println("Vvedite text: ");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        System.out.println("Kol simvolov " +str.length());
-        String[] words = str.split(" ");
-        System.out.println("Kol slov " + words.length);
+        do{        
+            System.out.println("0. Out of programm");
+            System.out.println("1. Vvesti kol simvolov");
+            System.out.println("2. Vvesti kol slov");
+            System.out.println("3. Nayti slovo v stroke");
+            System.out.println("4. Zamenit ukazannoe slovo v stroke");
+            System.out.println("Vyberite nomer funkcii: ");
+            int number = scanner.nextInt();
+            scanner.nextLine();
+            if(number == 0){
+                break;
+            }else if(number == 1){
+                System.out.println("Vy vybrali punkt "+number);
+                System.out.println("Kol simvolov " +str.length());
+            }else if(number == 2){
+                System.out.println("Vy vybrali punkt "+number);
+                String[] words = str.split(" ");
+                System.out.println("Kol slov " + words.length);
+            }else if(number == 3){
+                System.out.println("Vy vybrali punkt "+number);
+                System.out.println("Kakoe slovo nayti:  ");
+                String subStr = ;
+                int index = str.indexOf(subStr);
+                System.out.println("Ykazannoe slovo nahoditsya na  "+str.indexOf(subStr)+" stroke");
+            }
+        }
     }
-    
 }
