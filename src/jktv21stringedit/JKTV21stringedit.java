@@ -17,10 +17,11 @@ public class JKTV21stringedit {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Строки в Java");
         System.out.println("-----------Строки в Java 2----------");
+        System.out.println("Vvedite text: ");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+        System.out.println("Kol simvolov " +str.length());
     }
     
 }
