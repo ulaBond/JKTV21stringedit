@@ -20,7 +20,8 @@ public class JKTV21stringedit {
         System.out.println("Vvedite text: ");
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        do{        
+        OUTER:        
+        do {
             System.out.println("0. Out of programm");
             System.out.println("1. Vvesti kol simvolov");
             System.out.println("2. Vvesti kol slov");
@@ -29,22 +30,50 @@ public class JKTV21stringedit {
             System.out.println("Vyberite nomer funkcii: ");
             int number = scanner.nextInt();
             scanner.nextLine();
-            if(number == 0){
-                break;
-            }else if(number == 1){
-                System.out.println("Vy vybrali punkt "+number);
-                System.out.println("Kol simvolov " +str.length());
-            }else if(number == 2){
-                System.out.println("Vy vybrali punkt "+number);
-                String[] words = str.split(" ");
-                System.out.println("Kol slov " + words.length);
-            }else if(number == 3){
-                System.out.println("Vy vybrali punkt "+number);
-                System.out.println("Kakoe slovo nayti:  ");
-                String subStr = ;
-                int index = str.indexOf(subStr);
-                System.out.println("Ykazannoe slovo nahoditsya na  "+str.indexOf(subStr)+" stroke");
+            switch (number) {
+                case 0:
+                    break OUTER;
+                case 1:
+                    System.out.println("Vy vybrali punkt "+number);
+                    System.out.println("Kol simvolov " +str.length());
+                    break OUTER;
+                case 2:
+                    System.out.println("Vy vybrali punkt "+number);
+                    String[] words = str.split(" ");
+                    System.out.println("Kol slov " + words.length);
+                    break OUTER;
+                case 3:
+                    {
+                        System.out.println("Vy vybrali punkt "+number);
+                        System.out.println("Kakoe slovo nayti:  ");
+                        String subStr = scanner.nextLine();
+                        int index = str.indexOf(subStr);
+                        if(index < 0){
+                            System.out.println("Takogo slova net.");
+                        }else{
+                            index++;
+                            System.out.println("Ukazannoe slovo nahoditsya na "+index+" pozicii.");
+                        }       break OUTER;
+                    }
+                case 4:
+                    {
+                        System.out.println("Vy vybrali punkt "+number);
+                        System.out.println("Ukazite slovo dlya zameny:  ");
+                        String subStr = scanner.nextLine();
+                        int index = str.indexOf(subStr);
+                        if(index < 0){
+                            System.out.println("Takogo slova net.");
+                        }else{
+                            System.out.println("Kakim slovom zamenit?  ");
+                            String replaceStr = scanner.nextLine();
+                            System.out.println("Ispravlennaya stroka:  "+str.replace(subStr, replaceStr));
+                        }       break OUTER;
+                    }
+                default:
+                    break;
             }
-        }
+            System.out.println("******************");
+                    } while (true);
+        System.out.println("Poka");
     }
 }
