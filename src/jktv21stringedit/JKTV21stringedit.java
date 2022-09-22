@@ -5,6 +5,7 @@
  */
 package jktv21stringedit;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -23,8 +24,8 @@ public class JKTV21stringedit {
         OUTER:        
         do {
             System.out.println("0. Out of programm");
-            System.out.println("1. Vvesti kol simvolov");
-            System.out.println("2. Vvesti kol slov");
+            System.out.println("1. Vyvesti kol simvolov");
+            System.out.println("2. Vyvesti kol slov");
             System.out.println("3. Nayti slovo v stroke");
             System.out.println("4. Zamenit ukazannoe slovo v stroke");
             System.out.println("Vyberite nomer funkcii: ");
@@ -33,9 +34,21 @@ public class JKTV21stringedit {
             switch (number) {
                 case 0:
                     break OUTER;
-                case 1:
+                case 1://ne schitat probely i znaki prepinaniya
                     System.out.println("Vy vybrali punkt "+number);
-                    System.out.println("Kol simvolov " +str.length());
+                    int count = 0;
+                    char[] chars = {'a', 'b', 'c', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+                    HashSet set = new HashSet();
+                    for (int i = 0; i < chars.length; i++){
+                        //if(str.charAt(i) != ' ') count++;
+                        set.add(chars[i]);
+                    }
+                    String strInLowerCase = str.toLowerCase();
+                    for (int i = 0; i < strInLowerCase.length(); i++){
+                        //if(str.charAt(i) != ' ') count++;
+                        if(set.contains(strInLowerCase.charAt(i))) count++;
+                    }
+                    System.out.println("Kol simvolov " +count);
                     break OUTER;
                 case 2:
                     System.out.println("Vy vybrali punkt "+number);
